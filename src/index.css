@@ -5,34 +5,34 @@
 
 @layer base {
   :root {
-    /* Default Theme */
-    --background: 220 25% 97%;
-    --foreground: 240 10% 3.9%;
+    /* Avitta Health Theme - Calming healthcare colors */
+    --background: 200 30% 98%;
+    --foreground: 210 20% 15%;
     
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 210 20% 15%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 210 20% 15%;
     
-    --primary: 246 48% 43%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --primary: 195 85% 45%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 195 25% 95%;
+    --secondary-foreground: 195 85% 25%;
     
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 200 20% 96%;
+    --muted-foreground: 210 15% 50%;
     
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 160 60% 50%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 246 48% 43%;
+    --border: 200 20% 90%;
+    --input: 200 20% 95%;
+    --ring: 195 85% 45%;
     
     --radius: 1rem;
     
@@ -45,33 +45,33 @@
 
   /* Dark Theme */
   .theme-dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 210 30% 8%;
+    --foreground: 200 15% 95%;
     
-    --card: 240 10% 6.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 25% 12%;
+    --card-foreground: 200 15% 95%;
     
-    --popover: 240 10% 6.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 200 15% 95%;
     
-    --primary: 246 48% 53%;
-    --primary-foreground: 355.7 100% 97.3%;
+    --primary: 195 85% 55%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 240 5.9% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 200 15% 95%;
     
-    --muted: 240 5.9% 15%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 200 10% 65%;
     
-    --accent: 240 5.9% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 160 60% 45%;
+    --accent-foreground: 0 0% 100%;
     
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 15%;
-    --input: 240 5.9% 15%;
-    --ring: 246 48% 63%;
+    --border: 210 20% 22%;
+    --input: 210 20% 18%;
+    --ring: 195 85% 55%;
   }
 
   /* High Contrast Theme */

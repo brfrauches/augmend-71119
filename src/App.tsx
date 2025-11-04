@@ -5,14 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { AuthProvider } from "@/contexts/AuthContext";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { detectBrowser } from "@/utils/browser-detection";
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
-import ReflectionJournal from "./pages/ReflectionJournal";
-import HealthAssistant from "./pages/HealthAssistant";
-import WellnessCenter from "./pages/WellnessCenter";
-import Achievements from "./pages/Achievements";
 
 // Initialize query client with error handling
 const queryClient = new QueryClient({
@@ -29,13 +26,7 @@ const queryClient = new QueryClient({
   }
 });
 
-// Log browser information
-const browserInfo = detectBrowser();
-console.log("Browser Information:", browserInfo);
-
 const App = () => {
-  console.log("App Component Initializing");
-
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
@@ -44,14 +35,13 @@ const App = () => {
             <Toaster />
             <Sonner />
             <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/reflection-journal" element={<ReflectionJournal />} />
-                <Route path="/health-assistant" element={<HealthAssistant />} />
-                <Route path="/wellness-center" element={<WellnessCenter />} />
-                <Route path="/achievements" element={<Achievements />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <AuthProvider>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </AuthProvider>
             </BrowserRouter>
           </TooltipProvider>
         </ThemeProvider>
