@@ -1,0 +1,39 @@
+
+{
+  "name": "augmend-health-server",
+  "version": "1.0.0",
+  "description": "Backend server for AugMend Health application",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed:achievements": "ts-node src/scripts/seedAchievements.ts",
+    "seed:questions": "ts-node src/scripts/seedSuggestedQuestions.ts",
+    "seed:content": "ts-node src/scripts/seedContent.ts",
+    "seed:stats": "ts-node src/scripts/seedUserStats.ts"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0",
+    "uuid": "^11.1.0",
+    "date-fns": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.28",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

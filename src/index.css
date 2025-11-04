@@ -1,0 +1,342 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default Theme */
+    --background: 220 25% 97%;
+    --foreground: 240 10% 3.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    --primary: 246 48% 43%;
+    --primary-foreground: 355.7 100% 97.3%;
+    
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 246 48% 43%;
+    
+    --radius: 1rem;
+    
+    /* Font size scale (default - medium) */
+    --text-scale: 1;
+    
+    /* Layout density (default) */
+    --spacing-scale: 1;
+  }
+
+  /* Dark Theme */
+  .theme-dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 6.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 6.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 246 48% 53%;
+    --primary-foreground: 355.7 100% 97.3%;
+    
+    --secondary: 240 5.9% 15%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 5.9% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 240 5.9% 15%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 15%;
+    --input: 240 5.9% 15%;
+    --ring: 246 48% 63%;
+  }
+
+  /* High Contrast Theme */
+  .theme-high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    --primary: 246 100% 53%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 40%;
+    --input: 0 0% 90%;
+    --ring: 246 100% 53%;
+  }
+
+  /* Purple Theme */
+  .theme-purple {
+    --background: 250 30% 97%;
+    --foreground: 250 50% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 250 50% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 50% 10%;
+    
+    --primary: 250 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 250 20% 95%;
+    --secondary-foreground: 250 60% 25%;
+    
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 20% 50%;
+    
+    --accent: 250 20% 95%;
+    --accent-foreground: 250 60% 25%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 250 30% 90%;
+    --input: 250 30% 90%;
+    --ring: 250 70% 60%;
+  }
+
+  /* Green Theme */
+  .theme-green {
+    --background: 150 30% 97%;
+    --foreground: 150 50% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 150 50% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 50% 10%;
+    
+    --primary: 150 70% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 150 20% 95%;
+    --secondary-foreground: 150 60% 25%;
+    
+    --muted: 150 20% 95%;
+    --muted-foreground: 150 20% 50%;
+    
+    --accent: 150 20% 95%;
+    --accent-foreground: 150 60% 25%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 30% 90%;
+    --input: 150 30% 90%;
+    --ring: 150 70% 40%;
+  }
+
+  /* Font size variations */
+  .text-size-small {
+    --text-scale: 0.875;
+  }
+  
+  .text-size-medium {
+    --text-scale: 1;
+  }
+  
+  .text-size-large {
+    --text-scale: 1.25;
+  }
+  
+  .text-size-xlarge {
+    --text-scale: 1.5;
+  }
+
+  /* Layout density variations */
+  .density-compact {
+    --spacing-scale: 0.75;
+  }
+  
+  .density-default {
+    --spacing-scale: 1;
+  }
+  
+  .density-spacious {
+    --spacing-scale: 1.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/10;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    transition: background-color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+    transition: font-size 0.3s ease;
+  }
+  
+  h1 {
+    font-size: calc(2.25rem * var(--text-scale));
+    @apply bg-gradient-to-br from-foreground to-foreground/80 bg-clip-text text-transparent;
+  }
+  
+  h2 {
+    font-size: calc(1.875rem * var(--text-scale));
+  }
+  
+  h3 {
+    font-size: calc(1.5rem * var(--text-scale));
+  }
+  
+  h4 {
+    font-size: calc(1.25rem * var(--text-scale));
+  }
+  
+  p, span, button, a, li, input, textarea {
+    transition: font-size 0.3s ease;
+    font-size: calc(1rem * var(--text-scale));
+    @apply leading-relaxed text-foreground/80;
+  }
+
+  .text-xs {
+    font-size: calc(0.75rem * var(--text-scale));
+  }
+
+  .text-sm {
+    font-size: calc(0.875rem * var(--text-scale));
+  }
+
+  .text-base {
+    font-size: calc(1rem * var(--text-scale));
+  }
+
+  .text-lg {
+    font-size: calc(1.125rem * var(--text-scale));
+  }
+
+  .text-xl {
+    font-size: calc(1.25rem * var(--text-scale));
+  }
+
+  .text-2xl {
+    font-size: calc(1.5rem * var(--text-scale));
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 border border-white/20 shadow-lg;
+    padding: calc(1.5rem * var(--spacing-scale));
+    border-radius: calc(1rem * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .frosted-glass {
+    @apply backdrop-blur-md bg-white/40 border border-white/20;
+    padding: calc(0.5rem * var(--spacing-scale)) calc(0.75rem * var(--spacing-scale));
+    border-radius: calc(1.5rem * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .metric-card {
+    @apply bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300;
+    padding: calc(1.5rem * var(--spacing-scale));
+    border-radius: calc(1rem * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .content-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300;
+    padding: calc(1.5rem * var(--spacing-scale));
+    border-radius: calc(1rem * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .nav-item {
+    @apply text-sm font-medium transition-colors;
+    padding: calc(0.5rem * var(--spacing-scale)) calc(1rem * var(--spacing-scale));
+    border-radius: calc(9999px * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .nav-item-active {
+    @apply bg-primary text-white shadow-lg shadow-primary/25;
+  }
+  
+  .button-primary {
+    @apply bg-gradient-to-r from-primary to-primary/90 text-white font-medium shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300;
+    padding: calc(0.75rem * var(--spacing-scale)) calc(1.5rem * var(--spacing-scale));
+    border-radius: calc(9999px * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .input-minimal {
+    @apply bg-white/60 border border-white/20 backdrop-blur-lg focus:ring-2 focus:ring-primary/20 transition-all duration-300;
+    padding: calc(0.75rem * var(--spacing-scale)) calc(1rem * var(--spacing-scale));
+    border-radius: calc(0.75rem * var(--spacing-scale));
+    transition: padding 0.3s ease, border-radius 0.3s ease;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-br from-foreground to-foreground/80 bg-clip-text text-transparent;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Theme preview classes */
+  .theme-preview {
+    @apply w-full p-3 rounded-lg border relative flex items-center gap-2 cursor-pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .theme-color-dot {
+    @apply w-4 h-4 rounded-full;
+  }
+}
