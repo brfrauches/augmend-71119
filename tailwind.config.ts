@@ -61,8 +61,8 @@ export default {
         warning: "#F9CF58",
         caution: "#FF9500",
         critical: "#FF3B30",
-        // New brand color (changed from #16A149 to #4B4E8E)
-        brand: "#4B4E8E",
+        // New brand color
+        brand: "#102f76",
       },
       borderRadius: {
         lg: "var(--radius)",

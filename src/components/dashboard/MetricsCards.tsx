@@ -26,8 +26,8 @@ export const MetricsCards = ({
         className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
       >
         <div className="flex items-center space-x-3">
-          <div className="p-2 bg-teal-100 rounded-lg">
-            <TrendingUp className="w-6 h-6 text-teal-600" />
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <TrendingUp className="w-6 h-6 text-primary" />
           </div>
           <div>
             <p className="text-sm text-gray-600">Weekly Progress</p>
@@ -41,8 +41,8 @@ export const MetricsCards = ({
         className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
       >
         <div className="flex items-center space-x-3">
-          <div className="p-2 bg-teal-100 rounded-lg">
-            <Calendar className="w-6 h-6 text-teal-600" />
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Calendar className="w-6 h-6 text-primary" />
           </div>
           <div>
             <p className="text-sm text-gray-600">Streak</p>
@@ -56,8 +56,8 @@ export const MetricsCards = ({
         className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
       >
         <div className="flex items-center space-x-3">
-          <div className="p-2 bg-teal-100 rounded-lg">
-            <Target className="w-6 h-6 text-teal-600" />
+          <div className="p-2 bg-primary/10 rounded-lg">
+            <Target className="w-6 h-6 text-primary" />
           </div>
           <div>
             <p className="text-sm text-gray-600">Goals Met</p>

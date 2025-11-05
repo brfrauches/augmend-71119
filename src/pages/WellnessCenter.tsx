@@ -24,7 +24,7 @@ const CustomTooltip = ({
     return (
       <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-100">
         <p className="text-sm font-medium text-gray-900">{label}</p>
-        <p className="text-sm text-teal-600">
+        <p className="text-sm text-primary">
           {payload[0].name}: {payload[0].value}
         </p>
       </div>
@@ -178,8 +178,8 @@ const WellnessCenter = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center space-x-3">
-                        <div className="p-2 bg-teal-100 rounded-lg">
-                          <Moon className="w-6 h-6 text-teal-600" />
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                          <Moon className="w-6 h-6 text-primary" />
                         </div>
                         <div>
                           <p className="text-sm text-gray-600">Avg. Sleep</p>
@@ -191,8 +191,8 @@ const WellnessCenter = () => {
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center space-x-3">
-                        <div className="p-2 bg-teal-100 rounded-lg">
-                          <Brain className="w-6 h-6 text-teal-600" />
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                          <Brain className="w-6 h-6 text-primary" />
                         </div>
                         <div>
                           <p className="text-sm text-gray-600">Meditation</p>
@@ -204,8 +204,8 @@ const WellnessCenter = () => {
                     </div>
                     <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                       <div className="flex items-center space-x-3">
-                        <div className="p-2 bg-teal-100 rounded-lg">
-                          <Heart className="w-6 h-6 text-teal-600" />
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                          <Heart className="w-6 h-6 text-primary" />
                         </div>
                         <div>
                           <p className="text-sm text-gray-600">Mood Trend</p>

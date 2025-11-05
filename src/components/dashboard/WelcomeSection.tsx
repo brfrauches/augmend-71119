@@ -13,7 +13,7 @@ export const WelcomeSection = ({ focusItems }: WelcomeSectionProps) => {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl p-6 text-white"
+      className="bg-gradient-to-r from-primary to-primary/90 rounded-xl p-6 text-white"
     >
       <div className="flex justify-between items-start">
         <div>

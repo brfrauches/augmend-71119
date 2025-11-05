@@ -98,11 +98,11 @@ export const Notifications = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 text-gray-600 hover:text-teal-600 transition-colors"
+        className="relative p-2 text-gray-600 hover:text-primary transition-colors"
       >
         <Bell className="w-6 h-6" />
         {notifications.filter(n => !n.isRead).length > 0 && (
-          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-teal-500 rounded-full">
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-primary rounded-full">
             {notifications.filter(n => !n.isRead).length}
           </span>
         )}
@@ -199,7 +199,7 @@ export const Notifications = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     className={`p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors ${
-                      !notification.isRead ? "bg-teal-50" : ""
+                      !notification.isRead ? "bg-primary/5" : ""
                     }`}
                     onClick={() => markAsRead(notification.id)}
                   >

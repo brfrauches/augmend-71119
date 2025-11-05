@@ -15,11 +15,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 15%;
     
-    --primary: 195 85% 45%;
+    --primary: 218 81% 26%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 195 25% 95%;
-    --secondary-foreground: 195 85% 25%;
+    --secondary: 218 25% 95%;
+    --secondary-foreground: 218 70% 20%;
     
     --muted: 200 20% 96%;
     --muted-foreground: 210 15% 50%;
@@ -32,7 +32,7 @@
 
     --border: 200 20% 90%;
     --input: 200 20% 95%;
-    --ring: 195 85% 45%;
+    --ring: 218 81% 26%;
     
     --radius: 1rem;
     
@@ -54,7 +54,7 @@
     --popover: 210 25% 12%;
     --popover-foreground: 200 15% 95%;
     
-    --primary: 195 85% 55%;
+    --primary: 218 81% 40%;
     --primary-foreground: 0 0% 100%;
     
     --secondary: 210 20% 20%;
@@ -71,7 +71,7 @@
 
     --border: 210 20% 22%;
     --input: 210 20% 18%;
-    --ring: 195 85% 55%;
+    --ring: 218 81% 40%;
   }
 
   /* High Contrast Theme */

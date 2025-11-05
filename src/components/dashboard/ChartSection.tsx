@@ -21,7 +21,7 @@ const CustomTooltip = ({
     return (
       <div className="bg-white p-3 rounded-lg shadow-lg border border-gray-100">
         <p className="text-sm font-medium text-gray-900">{label}</p>
-        <p className="text-sm text-teal-600">
+        <p className="text-sm text-primary">
           Score: {payload[0].value}
         </p>
       </div>
@@ -76,7 +76,7 @@ export const ChartSection = ({ wellnessScoreData, treatmentProgressData }: Chart
               onClick={() => setTimeframe("daily")}
               className={`px-3 py-1 rounded-full text-sm ${
                 timeframe === "daily"
-                  ? "bg-teal-500 text-white"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -86,7 +86,7 @@ export const ChartSection = ({ wellnessScoreData, treatmentProgressData }: Chart
               onClick={() => setTimeframe("weekly")}
               className={`px-3 py-1 rounded-full text-sm ${
                 timeframe === "weekly"
-                  ? "bg-teal-500 text-white"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
