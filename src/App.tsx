@@ -11,6 +11,8 @@ import BottomNav from "@/components/BottomNav";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import Markers from "./pages/Markers";
+import MarkerDetail from "./pages/MarkerDetail";
 import NotFound from "./pages/NotFound";
 
 // Initialize query client with error handling
@@ -42,6 +44,8 @@ const App = () => {
                   <Route path="/" element={<Index />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/markers" element={<Markers />} />
+                  <Route path="/markers/:id" element={<MarkerDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <BottomNav />

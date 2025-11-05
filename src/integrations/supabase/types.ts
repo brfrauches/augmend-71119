@@ -14,6 +14,80 @@ export type Database = {
   }
   public: {
     Tables: {
+      health_marker_values: {
+        Row: {
+          created_at: string
+          id: string
+          marker_id: string
+          measured_at: string
+          notes: string | null
+          supplement_intervention_id: string | null
+          value: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          marker_id: string
+          measured_at?: string
+          notes?: string | null
+          supplement_intervention_id?: string | null
+          value: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          marker_id?: string
+          measured_at?: string
+          notes?: string | null
+          supplement_intervention_id?: string | null
+          value?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "health_marker_values_marker_id_fkey"
+            columns: ["marker_id"]
+            isOneToOne: false
+            referencedRelation: "health_markers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      health_markers: {
+        Row: {
+          created_at: string
+          id: string
+          max_reference: number | null
+          min_reference: number | null
+          name: string
+          personal_goal: number | null
+          unit: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          max_reference?: number | null
+          min_reference?: number | null
+          name: string
+          personal_goal?: number | null
+          unit: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          max_reference?: number | null
+          min_reference?: number | null
+          name?: string
+          personal_goal?: number | null
+          unit?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
