@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      client_trainers: {
+        Row: {
+          client_id: string
+          created_at: string | null
+          id: string
+          trainer_id: string
+        }
+        Insert: {
+          client_id: string
+          created_at?: string | null
+          id?: string
+          trainer_id: string
+        }
+        Update: {
+          client_id?: string
+          created_at?: string | null
+          id?: string
+          trainer_id?: string
+        }
+        Relationships: []
+      }
       health_marker_values: {
         Row: {
           created_at: string
@@ -143,6 +164,127 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      workout_checkins: {
+        Row: {
+          completed_at: string | null
+          created_at: string | null
+          id: string
+          notes: string | null
+          user_id: string
+          workout_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          user_id: string
+          workout_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          created_at?: string | null
+          id?: string
+          notes?: string | null
+          user_id?: string
+          workout_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "workout_checkins_workout_id_fkey"
+            columns: ["workout_id"]
+            isOneToOne: false
+            referencedRelation: "workouts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      workout_exercises: {
+        Row: {
+          created_at: string | null
+          id: string
+          load: number | null
+          name: string
+          notes: string | null
+          order_index: number | null
+          reps: number
+          sets: number
+          workout_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          load?: number | null
+          name: string
+          notes?: string | null
+          order_index?: number | null
+          reps: number
+          sets: number
+          workout_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          load?: number | null
+          name?: string
+          notes?: string | null
+          order_index?: number | null
+          reps?: number
+          sets?: number
+          workout_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "workout_exercises_workout_id_fkey"
+            columns: ["workout_id"]
+            isOneToOne: false
+            referencedRelation: "workouts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      workouts: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          description: string | null
+          difficulty_level: string | null
+          estimated_duration: number | null
+          id: string
+          is_template: boolean | null
+          name: string
+          updated_at: string | null
+          user_id: string
+          week_days: string[] | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          difficulty_level?: string | null
+          estimated_duration?: number | null
+          id?: string
+          is_template?: boolean | null
+          name: string
+          updated_at?: string | null
+          user_id: string
+          week_days?: string[] | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          difficulty_level?: string | null
+          estimated_duration?: number | null
+          id?: string
+          is_template?: boolean | null
+          name?: string
+          updated_at?: string | null
+          user_id?: string
+          week_days?: string[] | null
+        }
+        Relationships: []
       }
     }
     Views: {

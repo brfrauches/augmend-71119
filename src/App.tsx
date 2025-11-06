@@ -13,6 +13,7 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Markers from "./pages/Markers";
 import MarkerDetail from "./pages/MarkerDetail";
+import PhysicalActivity from "./pages/PhysicalActivity";
 import NotFound from "./pages/NotFound";
 
 // Initialize query client with error handling
@@ -46,6 +47,7 @@ const App = () => {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/markers" element={<Markers />} />
                   <Route path="/markers/:id" element={<MarkerDetail />} />
+                  <Route path="/physical-activity" element={<PhysicalActivity />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <BottomNav />

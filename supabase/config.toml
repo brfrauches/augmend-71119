@@ -1,1 +1,7 @@
 project_id = "mqasawevwgukuwanyjqo"
+
+[functions.process-exam]
+verify_jwt = false
+
+[functions.generate-workout]
+verify_jwt = true
