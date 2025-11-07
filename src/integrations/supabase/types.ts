@@ -136,6 +136,100 @@ export type Database = {
         }
         Relationships: []
       }
+      supplement_logs: {
+        Row: {
+          created_at: string | null
+          dose: string | null
+          id: string
+          notes: string | null
+          supplement_id: string
+          taken_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          dose?: string | null
+          id?: string
+          notes?: string | null
+          supplement_id: string
+          taken_at: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          dose?: string | null
+          id?: string
+          notes?: string | null
+          supplement_id?: string
+          taken_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "supplement_logs_supplement_id_fkey"
+            columns: ["supplement_id"]
+            isOneToOne: false
+            referencedRelation: "supplements"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      supplements: {
+        Row: {
+          created_at: string | null
+          dosage: string | null
+          end_date: string | null
+          form: string | null
+          frequency: string | null
+          id: string
+          is_active: boolean | null
+          linked_marker_id: string | null
+          name: string
+          notes: string | null
+          start_date: string | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          dosage?: string | null
+          end_date?: string | null
+          form?: string | null
+          frequency?: string | null
+          id?: string
+          is_active?: boolean | null
+          linked_marker_id?: string | null
+          name: string
+          notes?: string | null
+          start_date?: string | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          dosage?: string | null
+          end_date?: string | null
+          form?: string | null
+          frequency?: string | null
+          id?: string
+          is_active?: boolean | null
+          linked_marker_id?: string | null
+          name?: string
+          notes?: string | null
+          start_date?: string | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "supplements_linked_marker_id_fkey"
+            columns: ["linked_marker_id"]
+            isOneToOne: false
+            referencedRelation: "health_markers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_roles: {
         Row: {
           created_at: string | null
