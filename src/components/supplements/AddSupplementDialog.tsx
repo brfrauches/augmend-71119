@@ -32,7 +32,7 @@ export function AddSupplementDialog({ open, onOpenChange, onSuccess }: AddSupple
     frequency: "diário",
     start_date: new Date().toISOString().split("T")[0],
     end_date: "",
-    linked_marker_id: "",
+    linked_marker_id: "none",
     notes: "",
     is_active: true,
   });
@@ -72,7 +72,7 @@ export function AddSupplementDialog({ open, onOpenChange, onSuccess }: AddSupple
       const { error } = await supabase.from("supplements").insert({
         user_id: user.id,
         ...formData,
-        linked_marker_id: formData.linked_marker_id || null,
+        linked_marker_id: formData.linked_marker_id === "none" ? null : formData.linked_marker_id,
         end_date: formData.end_date || null,
       });
 
@@ -92,7 +92,7 @@ export function AddSupplementDialog({ open, onOpenChange, onSuccess }: AddSupple
         frequency: "diário",
         start_date: new Date().toISOString().split("T")[0],
         end_date: "",
-        linked_marker_id: "",
+        linked_marker_id: "none",
         notes: "",
         is_active: true,
       });
@@ -204,7 +204,7 @@ export function AddSupplementDialog({ open, onOpenChange, onSuccess }: AddSupple
                 <SelectValue placeholder="Selecione um marcador (opcional)" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Nenhum</SelectItem>
+                <SelectItem value="none">Nenhum</SelectItem>
                 {markers.map((marker) => (
                   <SelectItem key={marker.id} value={marker.id}>
                     {marker.name}
