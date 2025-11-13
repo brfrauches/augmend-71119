@@ -22,7 +22,7 @@ export default function BottomNav() {
 
   const rightItems = [
     { icon: Dumbbell, href: "/physical-activity", label: "Atividade Física" },
-    { icon: Ruler, href: "/body-evolution", label: "Evolução Corporal" },
+    { icon: Ruler, href: "/evolucao-corporal", label: "Evolução Corporal" },
     { icon: TrendingUp, href: "/insights", label: "Análise com IA" },
   ];
 
