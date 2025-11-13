@@ -29,12 +29,12 @@ export function RegionalChart({ measurementId }: RegionalChartProps) {
     setLoading(true);
     try {
       const { data, error } = await supabase
-        .from("body_segments")
+        .from("body_segments" as any)
         .select("*")
         .eq("measurement_id", measurementId);
 
       if (error) throw error;
-      setSegments(data || []);
+      setSegments((data || []) as any);
     } catch (error) {
       console.error("Error fetching segments:", error);
     } finally {

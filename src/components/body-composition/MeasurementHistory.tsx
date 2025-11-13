@@ -38,9 +38,9 @@ export function MeasurementHistory({ measurements, onUpdate }: MeasurementHistor
     if (!deleteId) return;
 
     try {
-      const { error } = await supabase
-        .from("body_measurements")
-        .delete()
+    const { error } = await supabase
+      .from("body_measurements" as any)
+      .delete()
         .eq("id", deleteId);
 
       if (error) throw error;

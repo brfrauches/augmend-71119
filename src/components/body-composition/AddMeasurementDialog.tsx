@@ -108,7 +108,7 @@ export function AddMeasurementDialog({ open, onOpenChange, onSuccess }: AddMeasu
     try {
       // Insert measurement
       const { data: measurement, error: measurementError } = await supabase
-        .from("body_measurements")
+        .from("body_measurements" as any)
         .insert({
           user_id: user.id,
           measured_at: formData.measured_at,
@@ -135,15 +135,15 @@ export function AddMeasurementDialog({ open, onOpenChange, onSuccess }: AddMeasu
 
         if (filledSegments.length > 0) {
           const segmentsToInsert = filledSegments.map((seg) => ({
-            measurement_id: measurement.id,
+            measurement_id: (measurement as any).id,
             region: seg.region,
             lean_mass_kg: seg.lean_mass_kg ? parseFloat(seg.lean_mass_kg) : null,
             fat_mass_kg: seg.fat_mass_kg ? parseFloat(seg.fat_mass_kg) : null,
           }));
 
           const { error: segmentsError } = await supabase
-            .from("body_segments")
-            .insert(segmentsToInsert);
+            .from("body_segments" as any)
+            .insert(segmentsToInsert as any);
 
           if (segmentsError) throw segmentsError;
         }

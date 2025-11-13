@@ -55,13 +55,13 @@ export default function BodyComposition() {
     setLoading(true);
     try {
       const { data, error } = await supabase
-        .from("body_measurements")
+        .from("body_measurements" as any)
         .select("*")
         .eq("user_id", user.id)
         .order("measured_at", { ascending: false });
 
       if (error) throw error;
-      setMeasurements(data || []);
+      setMeasurements((data || []) as any);
     } catch (error) {
       console.error("Error fetching measurements:", error);
       toast.error("Erro ao carregar medições");

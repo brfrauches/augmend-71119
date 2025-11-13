@@ -50,11 +50,11 @@ const App = () => {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/markers" element={<Markers />} />
                   <Route path="/markers/:id" element={<MarkerDetail />} />
-          <Route path="/physical-activity" element={<PhysicalActivity />} />
-            <Route path="/supplements" element={<Supplements />} />
-            <Route path="/supplements/:id" element={<SupplementDetail />} />
-            <Route path="/evolucao-corporal" element={<BodyComposition />} />
-          <Route path="*" element={<NotFound />} />
+                  <Route path="/physical-activity" element={<PhysicalActivity />} />
+                  <Route path="/supplements" element={<Supplements />} />
+                  <Route path="/supplements/:id" element={<SupplementDetail />} />
+                  <Route path="/evolucao-corporal" element={<BodyComposition />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
                 <BottomNav />
               </AuthProvider>
