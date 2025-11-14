@@ -17,6 +17,7 @@ import PhysicalActivity from "./pages/PhysicalActivity";
 import Supplements from "./pages/Supplements";
 import SupplementDetail from "./pages/SupplementDetail";
 import BodyComposition from "./pages/BodyComposition";
+import Nutrition from "./pages/Nutrition";
 import NotFound from "./pages/NotFound";
 
 // Initialize query client with error handling
@@ -54,6 +55,7 @@ const App = () => {
                   <Route path="/supplements" element={<Supplements />} />
                   <Route path="/supplements/:id" element={<SupplementDetail />} />
                   <Route path="/evolucao-corporal" element={<BodyComposition />} />
+                  <Route path="/nutrition" element={<Nutrition />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <BottomNav />
