@@ -14,6 +14,95 @@ export type Database = {
   }
   public: {
     Tables: {
+      body_measurements: {
+        Row: {
+          attachment_url: string | null
+          basal_metabolic_rate: number | null
+          created_at: string
+          fat_percent: number | null
+          fat_weight_kg: number | null
+          height_m: number | null
+          id: string
+          imc: number | null
+          lean_mass_kg: number | null
+          measured_at: string
+          notes: string | null
+          updated_at: string
+          user_id: string
+          water_percent: number | null
+          weight_kg: number
+        }
+        Insert: {
+          attachment_url?: string | null
+          basal_metabolic_rate?: number | null
+          created_at?: string
+          fat_percent?: number | null
+          fat_weight_kg?: number | null
+          height_m?: number | null
+          id?: string
+          imc?: number | null
+          lean_mass_kg?: number | null
+          measured_at?: string
+          notes?: string | null
+          updated_at?: string
+          user_id: string
+          water_percent?: number | null
+          weight_kg: number
+        }
+        Update: {
+          attachment_url?: string | null
+          basal_metabolic_rate?: number | null
+          created_at?: string
+          fat_percent?: number | null
+          fat_weight_kg?: number | null
+          height_m?: number | null
+          id?: string
+          imc?: number | null
+          lean_mass_kg?: number | null
+          measured_at?: string
+          notes?: string | null
+          updated_at?: string
+          user_id?: string
+          water_percent?: number | null
+          weight_kg?: number
+        }
+        Relationships: []
+      }
+      body_segments: {
+        Row: {
+          created_at: string
+          fat_mass_kg: number | null
+          id: string
+          lean_mass_kg: number | null
+          measurement_id: string
+          region: string
+        }
+        Insert: {
+          created_at?: string
+          fat_mass_kg?: number | null
+          id?: string
+          lean_mass_kg?: number | null
+          measurement_id: string
+          region: string
+        }
+        Update: {
+          created_at?: string
+          fat_mass_kg?: number | null
+          id?: string
+          lean_mass_kg?: number | null
+          measurement_id?: string
+          region?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "body_segments_measurement_id_fkey"
+            columns: ["measurement_id"]
+            isOneToOne: false
+            referencedRelation: "body_measurements"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       client_trainers: {
         Row: {
           client_id: string
@@ -104,6 +193,122 @@ export type Database = {
           name?: string
           personal_goal?: number | null
           unit?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      nutrition_ai_logs: {
+        Row: {
+          created_at: string
+          id: string
+          suggestion_text: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          suggestion_text: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          suggestion_text?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      nutrition_items: {
+        Row: {
+          calories: number | null
+          carbs_g: number | null
+          created_at: string
+          fat_g: number | null
+          id: string
+          meal_id: string
+          name: string
+          protein_g: number | null
+          quantity: string | null
+        }
+        Insert: {
+          calories?: number | null
+          carbs_g?: number | null
+          created_at?: string
+          fat_g?: number | null
+          id?: string
+          meal_id: string
+          name: string
+          protein_g?: number | null
+          quantity?: string | null
+        }
+        Update: {
+          calories?: number | null
+          carbs_g?: number | null
+          created_at?: string
+          fat_g?: number | null
+          id?: string
+          meal_id?: string
+          name?: string
+          protein_g?: number | null
+          quantity?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "nutrition_items_meal_id_fkey"
+            columns: ["meal_id"]
+            isOneToOne: false
+            referencedRelation: "nutrition_meals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      nutrition_meals: {
+        Row: {
+          carbs_g: number | null
+          category: string
+          created_at: string
+          fat_g: number | null
+          id: string
+          image_url: string | null
+          is_ai_generated: boolean | null
+          name: string
+          notes: string | null
+          protein_g: number | null
+          total_calories: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          carbs_g?: number | null
+          category: string
+          created_at?: string
+          fat_g?: number | null
+          id?: string
+          image_url?: string | null
+          is_ai_generated?: boolean | null
+          name: string
+          notes?: string | null
+          protein_g?: number | null
+          total_calories?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          carbs_g?: number | null
+          category?: string
+          created_at?: string
+          fat_g?: number | null
+          id?: string
+          image_url?: string | null
+          is_ai_generated?: boolean | null
+          name?: string
+          notes?: string | null
+          protein_g?: number | null
+          total_calories?: number | null
           updated_at?: string
           user_id?: string
         }
@@ -258,6 +463,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      water_logs: {
+        Row: {
+          amount_ml: number
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          amount_ml: number
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          amount_ml?: number
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
       }
       workout_checkins: {
         Row: {
