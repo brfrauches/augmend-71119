@@ -71,21 +71,46 @@ const ExamImport = () => {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error("Usuário não autenticado");
 
-      // Save directly via N8N
-      const saveResponse = await fetch("https://n8n.avitta.health/webhook/save_exam", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          exam_date: analysisResult.exam_date,
-          markers: analysisResult.markers,
-          user_id: user.id,
-        }),
-      });
+      // Save markers directly to Supabase
+      for (const marker of analysisResult.markers) {
+        // Check if marker exists, if not create it
+        const { data: existingMarker } = await supabase
+          .from('health_markers')
+          .select('id')
+          .eq('user_id', user.id)
+          .eq('name', marker.marker_name)
+          .single();
 
-      if (!saveResponse.ok) {
-        throw new Error("Erro ao salvar exame");
+        let markerId: string;
+
+        if (existingMarker) {
+          markerId = existingMarker.id;
+        } else {
+          // Create new marker
+          const { data: newMarker, error: markerError } = await supabase
+            .from('health_markers')
+            .insert({
+              user_id: user.id,
+              name: marker.marker_name,
+              unit: marker.unit,
+            })
+            .select('id')
+            .single();
+
+          if (markerError) throw markerError;
+          markerId = newMarker.id;
+        }
+
+        // Insert marker value with exam date as measured_at
+        const { error: valueError } = await supabase
+          .from('health_marker_values')
+          .insert({
+            marker_id: markerId,
+            value: marker.value || 0,
+            measured_at: analysisResult.exam_date,
+          });
+
+        if (valueError) throw valueError;
       }
 
       toast({
