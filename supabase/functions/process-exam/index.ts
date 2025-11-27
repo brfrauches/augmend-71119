@@ -19,30 +19,35 @@ serve(async (req) => {
     }
 
     // Prepare the message for the AI
-    const systemPrompt = `You are a medical exam analyzer. Extract health markers from the provided medical exam document.
+    const systemPrompt = `You are a medical exam analyzer. Extract ALL health markers from the provided medical exam document.
+
+IMPORTANT: Extract EVERY marker found in the document, not just common ones. Include:
+- Blood tests (Hemograma: hemácias, hemoglobina, hematócrito, leucócitos, plaquetas, etc.)
+- Biochemistry (Glicose, Ureia, Creatinina, Ácido úrico, etc.)
+- Lipid profile (Colesterol Total, HDL, LDL, Triglicerídeos, etc.)
+- Liver function (TGO, TGP, GGT, Bilirrubinas, Fosfatase alcalina, etc.)
+- Thyroid (TSH, T3, T4, T4 Livre, etc.)
+- Hormones (Testosterona, Cortisol, Prolactina, etc.)
+- Vitamins (Vitamina D, B12, Ácido fólico, Ferritina, etc.)
+- Minerals (Ferro, Cálcio, Magnésio, Potássio, Sódio, etc.)
+- Proteins (Proteínas totais, Albumina, Globulinas, etc.)
+- Cardiac markers (Troponina, CK-MB, BNP, etc.)
+- Inflammatory markers (PCR, VHS, etc.)
+- Diabetes markers (Hemoglobina Glicada, Insulina, Peptídeo C, etc.)
+- ANY other health marker present in the document
+
 Return a JSON object with this exact structure:
 {
   "markers": [
     {
-      "name": "Marker name in Portuguese",
-      "value": "numeric value only",
-      "unit": "unit of measurement"
+      "name": "Marker name in Portuguese (exactly as it appears in the exam)",
+      "value": "numeric value only (extract the number)",
+      "unit": "unit of measurement (mg/dL, g/dL, %, etc.)"
     }
   ]
 }
 
-Common markers to look for:
-- Colesterol Total (mg/dL)
-- HDL (mg/dL)
-- LDL (mg/dL)
-- Triglicerídeos (mg/dL)
-- Glicose (mg/dL)
-- Hemoglobina Glicada (%)
-- Testosterona (ng/dL)
-- Vitamina D (ng/mL)
-- TSH (mUI/L)
-- T4 Livre (ng/dL)
-
+Extract the numeric value only (no text). If a marker has a range or multiple values, extract the main value.
 Return ONLY the JSON object, no additional text.`;
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
