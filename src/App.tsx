@@ -18,6 +18,11 @@ import Supplements from "./pages/Supplements";
 import SupplementDetail from "./pages/SupplementDetail";
 import BodyComposition from "./pages/BodyComposition";
 import Nutrition from "./pages/Nutrition";
+import ExamImport from "./pages/ExamImport";
+import ExamReview from "./pages/ExamReview";
+import ExamSuccess from "./pages/ExamSuccess";
+import ExamList from "./pages/ExamList";
+import ExamDetail from "./pages/ExamDetail";
 import NotFound from "./pages/NotFound";
 
 // Initialize query client with error handling
@@ -56,6 +61,11 @@ const App = () => {
                   <Route path="/supplements/:id" element={<SupplementDetail />} />
                   <Route path="/evolucao-corporal" element={<BodyComposition />} />
                   <Route path="/nutrition" element={<Nutrition />} />
+                  <Route path="/exams/import" element={<ExamImport />} />
+                  <Route path="/exams/review" element={<ExamReview />} />
+                  <Route path="/exams/success" element={<ExamSuccess />} />
+                  <Route path="/exams" element={<ExamList />} />
+                  <Route path="/exams/:id" element={<ExamDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
                 <BottomNav />
